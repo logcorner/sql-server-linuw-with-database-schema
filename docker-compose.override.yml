@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+
+  # database service
+  logcorner.workshop.service.data:
+    ports:
+      - "1433:1433"
+    volumes:
+      - mssql-server-linux-data:/var/opt/mssql/data
+
+volumes:
+  mssql-server-linux-data:
+   
+    

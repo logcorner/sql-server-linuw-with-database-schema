@@ -18,7 +18,7 @@ spec:
         fsGroup: 10001
       containers:
       - name: mssql
-        image: myacrlogcorner.azurecr.io/logcorner-edusync-speech-command-data:1.0.0
+        image: myacrlogcorner.azurecr.io/database-image:1.0.0
         ports:
         - containerPort: 1433
         env:
@@ -31,13 +31,13 @@ spec:
             secretKeyRef:
               name: mssql
               key: SA_PASSWORD 
-        # volumeMounts:
-        # - name: mssqldb
-          # mountPath: /var/opt/mssql/data
-      # volumes:
-      # - name: mssqldb
-        # persistentVolumeClaim:
-          # claimName: mssql-data
+        volumeMounts:
+        - name: mssqldb
+          mountPath: /var/opt/mssql/data
+      volumes:
+      - name: mssqldb
+        persistentVolumeClaim:
+          claimName: mssql-data
       imagePullSecrets:
         - name: regsecret     
           

@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+ 
+ # database service
+  logcorner.workshop.service.data:
+    image: database-image
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        SA_PASSWORD: MyC0m9l&xP@ssw0rd
+ 
+
+
+
+
