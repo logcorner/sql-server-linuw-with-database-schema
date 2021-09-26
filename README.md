@@ -1,1 +1,1 @@
-# sql-server-linuw-with-database-schema
+# sql-server-linux-with-database-schema
